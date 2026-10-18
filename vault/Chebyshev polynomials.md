@@ -10,6 +10,8 @@ $$T_n(x) = \cos\big(n \arccos(x)\big)$$
 
 on $[-1, 1]$. Substituting $x = \cos\theta$ turns it into $T_n(\cos\theta) = \cos(n\theta)$, so $T_n$ is a cosine wave in the angle $\theta$, drawn as a function of $x$. Because it is a cosine, its values always stay between $-1$ and $1$ on $[-1, 1]$.
 
+<iframe src="./supplements/chebyshev.htm" title="Animated construction of the Chebyshev polynomials" style="width:100%; aspect-ratio:16/10; min-height:440px; border:0; border-radius:8px; display:block;" loading="lazy"></iframe>
+
 Let $y = \arccos x$. The angle-sum identity gives
 $$T_{n+1}(x) = \cos(ny)\cos y - \sin(ny)\sin y, \qquad T_{n-1}(x) = \cos(ny)\cos y + \sin(ny)\sin y$$
 
