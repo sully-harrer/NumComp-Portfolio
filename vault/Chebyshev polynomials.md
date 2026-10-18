@@ -10,7 +10,6 @@ $$T_n(x) = \cos\big(n \arccos(x)\big)$$
 
 on $[-1, 1]$. Substituting $x = \cos\theta$ turns it into $T_n(\cos\theta) = \cos(n\theta)$, so $T_n$ is a cosine wave in the angle $\theta$, drawn as a function of $x$. Because it is a cosine, its values always stay between $-1$ and $1$ on $[-1, 1]$.
 
-<iframe src="./supplements/chebyshev.htm" title="Animated construction of the Chebyshev polynomials" style="width:100%; aspect-ratio:16/10; min-height:440px; border:0; border-radius:8px; display:block;" loading="lazy"></iframe>
 
 Let $y = \arccos x$. The angle-sum identity gives
 $$T_{n+1}(x) = \cos(ny)\cos y - \sin(ny)\sin y, \qquad T_{n-1}(x) = \cos(ny)\cos y + \sin(ny)\sin y$$
@@ -20,6 +19,9 @@ Adding the two, the sine terms cancel and $\cos y = x$, so $T_{n+1} + T_{n-1} = 
 $$T_0 = 1, \qquad T_1 = x, \qquad T_{n+1} = 2x\,T_n - T_{n-1}$$
 
 Each step multiplies by $x$ and subtracts, so every $T_n$ is a polynomial of degree $n$.
+
+
+<iframe src="./supplements/chebyshev.htm" title="Animated construction of the Chebyshev polynomials" style="width:100%; aspect-ratio:16/10; min-height:440px; border:0; border-radius:8px; display:block;" loading="lazy"></iframe>
 
 # As an interpolation basis
 Using $\{T_0, T_1, \dots, T_{n-1}\}$ as the columns gives a [[Vandermonde matrix]] built from the recurrence instead of from powers of $x$. It spans the same polynomials as the monomials, so it produces the same interpolant but a different matrix.
