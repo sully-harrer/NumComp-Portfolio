@@ -11,8 +11,6 @@ Polynomials are a natural basis for functions on an interval. For periodic funct
 
 Each coefficient $\hat f_k$ says how much of frequency $\theta_k$ is in the signal. The transform answers the question: which mix of pure waves adds up to these samples?
 
-<iframe src="./supplements/dft.htm" title="Animated computation of the discrete Fourier transform" style="width:100%; aspect-ratio:16/10; min-height:440px; border:0; border-radius:8px; display:block;" loading="lazy"></iframe>
-
 # As a Vandermonde matrix
 Evaluating the wave basis at the sample points gives a [[Vandermonde matrix]] whose columns are waves:
 $$\mathcal F = \Big[\, e^{i\theta_1 x} \,\Big|\, e^{i\theta_2 x} \,\Big|\, \cdots \Big]$$
