@@ -26,7 +26,7 @@ The definition above also makes sense when inputs and outputs are vectors -- jus
 
 $$\kappa = \max_{\delta x} \frac{\|A\delta x\|}{\|\delta x\|}\,\frac{\|x\|}{\|Ax\|} = \|A\|\,\frac{\|x\|}{\|Ax\|}$$
 
-where $\|A\|$ is the [[Norm#Induced matrix norm|induced matrix norm]]. This depends on $x$. Example: $A = \begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix}$ has $\kappa = 1$ at $x = [1,0]^T$, but at $x = [0,1]^T$ we get $Ax = 0$, so $\kappa$ is infinite.
+where $\|A\|$ is the [[Norm#Matrix norm|induced matrix norm]]. This depends on $x$. Example: $A = \begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix}$ has $\kappa = 1$ at $x = [1,0]^T$, but at $x = [0,1]^T$ we get $Ax = 0$, so $\kappa$ is infinite.
 
 The condition number of the matrix is the worst case over all vectors:
 $$\kappa(A) = \max_{x \neq 0} \|A\|\,\frac{\|x\|}{\|Ax\|}$$
@@ -45,4 +45,4 @@ $$\kappa(A) = \frac{\sigma_{\max}}{\sigma_{\min}}$$
 Orthogonal transformations don't change the singular values, so they don't change the conditioning either.
 
 # Conditioning and Rootfinding
-The conditioning of rootfinding depends on the problem's input representation, rather than just the function itself. A polynomial can be specified by its coefficients or by its roots, as can be seen easily in [[Wilkinson's polynomial]]. These two representations act as different inputs to the lsame problem, and the map from coefficients to roots can be much more ill-conditioned than the reverse. In particular, roots that are close to each other tend to make the rootfinding problem ill-conditioned. See the image in [[Wilkinson's polynomial]] for an example. 
+The conditioning of rootfinding depends on the problem's input representation, rather than just the function itself. A polynomial can be specified by its coefficients or by its roots, as can be seen easily in [[Wilkinson's polynomial]]. These two representations act as different inputs to the same problem, and the map from coefficients to roots can be much more ill-conditioned than the reverse. In particular, roots that are close to each other tend to make the rootfinding problem ill-conditioned. See the image in [[Wilkinson's polynomial]] for an example. 

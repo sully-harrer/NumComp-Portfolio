@@ -1,6 +1,6 @@
 Given an $m \times n$ matrix $A$ with $m \ge n$, find $x$ that minimizes
 
-$$|Ax - b|$$
+$$\|Ax - b\|$$
 
 If $A$ is square and full rank, the minimizer satisfies $Ax - b = 0$. In general that isn't possible, because $b$ is not in the range of $A$. Instead, the residual $Ax - b$ must be [[Orthogonality|orthogonal]] to the range of $A$.
 
@@ -28,4 +28,4 @@ With $A = U\Sigma V^T$, compute $U^Tb$, solve with the diagonal $\Sigma$, and ap
 | SVD                         | about $2mn^2 + 11n^3$ to factor once, then $2mn + 2n^2$ per right-hand side    | When you want the most information about $A$ (the singular values give $\kappa(A)$) or $A$ is rank deficient. It costs about the same as QR when $m \gg n$, but much more for square matrices. |
 
 # Role in Numerical Computation
-Fitting a polynomial to data with a [[Vandermonde matrix]] is a least squares problem whenever there are more data points than coefficients. In the square case, where the number of points equals the number of coefficients, the residual can be made zero and the fit is exact. That is [[Polynomial interpolation]], and QR is still the stable way to solve it. [[GMRES]] also reduces to a small least squares problem at each iteration.
+Fitting a polynomial to data with a [[Vandermonde matrix]], or fitting any [[Linear model|linear model]] is a least squares problem whenever there are more data points than coefficients. In the square case, where the number of points equals the number of coefficients, the residual can be made zero and the fit is exact. That is [[Polynomial interpolation]], and QR is still the stable way to solve it. [[GMRES]] also reduces to a small least squares problem at each iteration. [[Gradient descent]] can also minimize the least squares loss, but does so slowly because the shape of the bowl is set by $A^TA$, whose condition number is $\kappa(A)^2$.
