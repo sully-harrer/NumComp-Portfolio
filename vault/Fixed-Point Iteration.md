@@ -17,3 +17,5 @@ Because the dominant term is $e_{k}$ (recall the numerical computation definitio
 
 # Connections
 [[Newton's method]] is an optimized specific version of Fixed-Point iteration where the algebraic rearrangement is $g(x) = x - \frac{f(x)}{f'(x)}$. It is powerful because $g'(x^*)$ is exactly 0, resulting in quadratic convergence by wiping out the linear error term.
+
+[[Gradient descent]] is also a fixed-point iteration, with $g(c) = c - \gamma\nabla L(c)$. Its limit on the step size $\gamma$ is the same $|g'| < 1$ condition.
