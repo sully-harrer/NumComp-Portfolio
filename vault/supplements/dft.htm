@@ -33,7 +33,7 @@ button { min-width: 36px; height: 36px; padding: 0 8px; border: 0; border-radius
 button:hover:not(:disabled) { background: var(--btnhover); }
 button:disabled { opacity: .4; cursor: default; }
 button:focus-visible, input:focus-visible { outline: 2px solid var(--p); outline-offset: 2px; }
-button svg { width: 16px; height: 16px; fill: currentColor; }
+button svg { width: 16px; height: 16px; fill: currentColor; pointer-events: none; }
 #seek { width: 100%; height: 36px; margin: 0; accent-color: var(--p); cursor: pointer; }
 </style>
 </head>
@@ -460,7 +460,8 @@ function stepScene(dir) {
 function togglePlay() { if (playing) { userPaused = true; pause(); } else play(); }
 
 function updateUI() {
-  $("play").innerHTML = playing ? PAUSE_ICON : PLAY_ICON;
+  const playBtn = $("play"), state = playing ? "pause" : "play";
+  if (playBtn.dataset.icon !== state) { playBtn.dataset.icon = state; playBtn.innerHTML = playing ? PAUSE_ICON : PLAY_ICON; }
   $("play").setAttribute("aria-label", playing ? "Pause" : "Play");
   if (!scrubbing) $("seek").value = Math.round(T / TOTAL * 1000);
   $("scene").textContent = (!playing && T <= scenes[0].end + 1e-6) ? "Press play to begin" : scenes[sceneIndex(T)].name;
